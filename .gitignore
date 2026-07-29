@@ -1,0 +1,15 @@
+# Secrets
+.env
+
+# uv / Python
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+uv.lock
+
+# OS
+.DS_Store
+
+# Data (local test files only)
+data/*.csv
