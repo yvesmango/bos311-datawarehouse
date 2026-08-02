@@ -16,15 +16,13 @@ This project turns Boston 311 service request data into a clean, queryable wareh
 
 1. Build the ingestion pipeline from the Boston CKAN API.
 2. Load data into PostgreSQL/Supabase.
-3. Add a lightweight dashboard for exploring service requests.
+3. Stand up Metabase as the primary exploration layer.
 
-## Running the dashboard
+## Exploring with Metabase
 
-Once dependencies are installed and `DATABASE_URL` is set in `.env`, run:
+See [`docs/metabase-setup.md`](docs/metabase-setup.md) for the local Docker command,
+Supabase Session Pooler connection format, and the five starter questions in the
+"BOS311 Explorer" collection.
 
-```bash
-uv run streamlit run dashboard/app.py
-```
-
-The dashboard reads from the cleaned `tickets` table and uses a read-only
-connection for exploration.
+The warehouse remains the source of truth; Metabase is the read-only analysis
+surface for maps, charts, tables, and future embeds.

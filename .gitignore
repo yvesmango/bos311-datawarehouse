@@ -13,3 +13,9 @@ uv.lock
 
 # Data (local test files only)
 data/*.csv
+
+# Metabase local state
+.metabase/
+metabase.db
+metabase.sqlite
+metabase.mv.db
