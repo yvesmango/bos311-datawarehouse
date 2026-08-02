@@ -50,7 +50,7 @@ Create a collection named `BOS311 Explorer` and save these five questions in it:
 1. `Map: Open Tickets by Location`
    - Filter: `case_status = 'open'`
    - Visualization: map with pin markers
-   - Color by: `case_title` or `department`
+   - Color by: `subject` or `department`
 
 2. `Bar Chart: Avg Response Time by City Council District`
    - Metric: `AVG(closed_dt - open_dt)` in hours
@@ -64,7 +64,7 @@ Create a collection named `BOS311 Explorer` and save these five questions in it:
 
 4. `Table: Late Tickets (SLA Violations)`
    - Filter: `on_time = false` and `case_status = 'open'`
-   - Columns: `case_enquiry_id`, `case_title`, `neighborhood`, `open_dt`, `sla_target_dt`
+   - Columns: `case_enquiry_id`, `subject`, `neighborhood`, `open_dt`, `sla_target_dt`
    - Sort: `open_dt DESC`
 
 5. `Donut Chart: Tickets by Department`
@@ -111,3 +111,4 @@ For a future public-facing site:
 - Metabase should only read from the warehouse.
 - Keep local Docker state out of git.
 - Prefer the Session Pooler for this project’s long-lived BI connection.
+- In this warehouse, `subject` is the ticket title field to use in place of raw-source `case_title`.
