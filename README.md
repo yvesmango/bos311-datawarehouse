@@ -17,3 +17,14 @@ This project turns Boston 311 service request data into a clean, queryable wareh
 1. Build the ingestion pipeline from the Boston CKAN API.
 2. Load data into PostgreSQL/Supabase.
 3. Add a lightweight dashboard for exploring service requests.
+
+## Running the dashboard
+
+Once dependencies are installed and `DATABASE_URL` is set in `.env`, run:
+
+```bash
+uv run streamlit run dashboard/app.py
+```
+
+The dashboard reads from the cleaned `tickets` table and uses a read-only
+connection for exploration.
